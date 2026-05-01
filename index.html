@@ -17,15 +17,9 @@
       padding: 40px 20px 60px;
     }
 
-    .page {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+    .page { max-width: 720px; margin: 0 auto; }
 
-    header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
+    header { text-align: center; margin-bottom: 48px; }
 
     header h1 {
       font-family: 'Cinzel', serif;
@@ -58,12 +52,21 @@
       margin: 0 auto;
     }
 
-    .scripts {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 48px;
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #444;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1a1a1a;
     }
+
+    .section { margin-bottom: 48px; }
+
+    /* ── SCRIPT CARDS ── */
+    .scripts { display: flex; flex-direction: column; gap: 16px; }
 
     .script-card {
       border: 1px solid #1e1e1e;
@@ -142,6 +145,50 @@
       border-color: #69d9ff;
     }
 
+    /* ── MIRROR LINKS ── */
+    .mirrors { display: flex; flex-direction: column; gap: 10px; }
+
+    .mirror-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border: 1px solid #1a1a1a;
+      background: #0f0f0f;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .mirror-link:hover { border-color: #333; }
+
+    .mirror-icon {
+      font-size: 18px;
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .mirror-info { flex: 1; }
+
+    .mirror-name {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 2px;
+    }
+
+    .mirror-url {
+      font-size: 10px;
+      color: #333;
+      letter-spacing: 1px;
+    }
+
+    .mirror-arrow {
+      font-size: 11px;
+      color: #333;
+    }
+
     footer {
       text-align: center;
       font-size: 11px;
@@ -175,58 +222,106 @@
       </p>
     </header>
 
-    <div class="scripts">
+    <!-- SCRIPTS -->
+    <div class="section">
+      <h2>Mirror Scripts</h2>
+      <div class="scripts">
 
-      <div class="script-card">
-        <div class="script-name">ATHEDEN MIRROR</div>
-        <div class="script-file">Atheden-Download.bat</div>
-        <div class="script-desc">
-          Mirrors the Atheden music archive — sacred songs by Ivory and Wendell.
-          Downloads MP3, PNG, TXT, and BAT files. Lyrics (TXT) are always refreshed
-          on every run. Album art matching an MP3 basename and spectrograms are
-          automatically excluded. Resume-safe for audio and images.
+        <div class="script-card">
+          <div class="script-name">ATHEDEN MIRROR</div>
+          <div class="script-file">Atheden-Download.bat</div>
+          <div class="script-desc">
+            Mirrors the Atheden music archive — sacred songs by Ivory and Wendell.
+            Downloads MP3, PNG, TXT, and BAT files. Lyrics (TXT) are always refreshed
+            on every run. Album art matching an MP3 basename and spectrograms are
+            automatically excluded. Resume-safe for audio and images.
+          </div>
+          <div class="tags">
+            <span class="tag green">RESUME-SAFE</span>
+            <span class="tag gold">LYRICS ALWAYS FRESH</span>
+            <span class="tag blue">MP3 · PNG · TXT · BAT</span>
+          </div>
+          <a class="download-btn" href="https://archive.org/download/atheden/Atheden-Download.bat">⬇ DOWNLOAD</a>
         </div>
-        <div class="tags">
-          <span class="tag green">RESUME-SAFE</span>
-          <span class="tag gold">LYRICS ALWAYS FRESH</span>
-          <span class="tag blue">MP3 · PNG · TXT · BAT</span>
+
+        <div class="script-card">
+          <div class="script-name">ATHEDIA MIRROR</div>
+          <div class="script-file">Athedia-Download.bat</div>
+          <div class="script-desc">
+            Mirrors the Athedia infrastructure archive — the complete technical
+            framework, source files, and deployment configurations. Downloads ZIP
+            and BAT files. Resume-safe, preserving all historical versions locally
+            as natural version control.
+          </div>
+          <div class="tags">
+            <span class="tag green">RESUME-SAFE</span>
+            <span class="tag blue">ZIP · BAT</span>
+            <span class="tag gold">VERSION HISTORY PRESERVED</span>
+          </div>
+          <a class="download-btn" href="https://archive.org/download/athedia/Athedia-Download.bat">⬇ DOWNLOAD</a>
         </div>
-        <a class="download-btn" href="https://archive.org/download/atheden/Atheden-Download.bat">⬇ DOWNLOAD</a>
+
+        <div class="script-card">
+          <div class="script-name">WIKKKAN BOOKS MIRROR</div>
+          <div class="script-file">Books-Download.bat</div>
+          <div class="script-desc">
+            Mirrors the WIKKKAN books archive — philosophy, spirituality, psychology,
+            politics, and personal transformation by Wendell Charles NeSmith.
+            Wipes and redownloads all files on every run so updated books always
+            replace older local copies.
+          </div>
+          <div class="tags">
+            <span class="tag gold">ALWAYS FRESH</span>
+            <span class="tag blue">TXT · BAT</span>
+          </div>
+          <a class="download-btn" href="https://archive.org/download/wikkkan/Books-Download.bat">⬇ DOWNLOAD</a>
+        </div>
+
       </div>
+    </div>
 
-      <div class="script-card">
-        <div class="script-name">ATHEDIA MIRROR</div>
-        <div class="script-file">Athedia-Download.bat</div>
-        <div class="script-desc">
-          Mirrors the Athedia infrastructure archive — the complete technical
-          framework, source files, and deployment configurations. Downloads ZIP
-          and BAT files. Resume-safe, preserving all historical versions locally
-          as natural version control.
-        </div>
-        <div class="tags">
-          <span class="tag green">RESUME-SAFE</span>
-          <span class="tag blue">ZIP · BAT</span>
-          <span class="tag gold">VERSION HISTORY PRESERVED</span>
-        </div>
-        <a class="download-btn" href="https://archive.org/download/athedia/Athedia-Download.bat">⬇ DOWNLOAD</a>
+    <!-- MIRRORS -->
+    <div class="section">
+      <h2>Content Mirrors</h2>
+      <div class="mirrors">
+
+        <a class="mirror-link" href="https://archive.org/details/@bardpresident" target="_blank">
+          <div class="mirror-icon">📦</div>
+          <div class="mirror-info">
+            <div class="mirror-name">INTERNET ARCHIVE</div>
+            <div class="mirror-url">archive.org/@bardpresident</div>
+          </div>
+          <div class="mirror-arrow">→</div>
+        </a>
+
+        <a class="mirror-link" href="https://www.youtube.com/@BardPresident" target="_blank">
+          <div class="mirror-icon">▶</div>
+          <div class="mirror-info">
+            <div class="mirror-name">YOUTUBE</div>
+            <div class="mirror-url">youtube.com/@BardPresident</div>
+          </div>
+          <div class="mirror-arrow">→</div>
+        </a>
+
+        <a class="mirror-link" href="https://odysee.com/@BardPresident:0" target="_blank">
+          <div class="mirror-icon">◈</div>
+          <div class="mirror-info">
+            <div class="mirror-name">ODYSEE</div>
+            <div class="mirror-url">odysee.com/@BardPresident</div>
+          </div>
+          <div class="mirror-arrow">→</div>
+        </a>
+
+        <a class="mirror-link" href="https://www.bitchute.com/channel/P9QR7Z6nmVtm" target="_blank">
+          <div class="mirror-icon">⬡</div>
+          <div class="mirror-info">
+            <div class="mirror-name">BITCHUTE</div>
+            <div class="mirror-url">bitchute.com/channel/P9QR7Z6nmVtm</div>
+          </div>
+          <div class="mirror-arrow">→</div>
+        </a>
+
       </div>
-
-      <div class="script-card">
-        <div class="script-name">WIKKKAN BOOKS MIRROR</div>
-        <div class="script-file">Books-Download.bat</div>
-        <div class="script-desc">
-          Mirrors the WIKKKAN books archive — philosophy, spirituality, psychology,
-          politics, and personal transformation by Wendell Charles NeSmith.
-          Wipes and redownloads all files on every run so updated books always
-          replace older local copies.
-        </div>
-        <div class="tags">
-          <span class="tag gold">ALWAYS FRESH</span>
-          <span class="tag blue">TXT · BAT</span>
-        </div>
-        <a class="download-btn" href="https://archive.org/download/wikkkan/Books-Download.bat">⬇ DOWNLOAD</a>
-      </div>
-
     </div>
 
     <footer>
