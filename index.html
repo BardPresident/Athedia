@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATHEDIA — Sovereign Archive Mirror Scripts</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #c8c8c8;
+      font-family: 'Share Tech Mono', monospace;
+      min-height: 100vh;
+      padding: 40px 20px 60px;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 36px;
+      letter-spacing: 8px;
+      color: #69d9ff;
+      text-shadow: 0 0 30px rgba(105,217,255,0.4);
+      margin-bottom: 8px;
+    }
+
+    header .sub {
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header .divider {
+      margin: 20px auto;
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #69d9ff, transparent);
+    }
+
+    header .desc {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .scripts {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .script-card {
+      border: 1px solid #1e1e1e;
+      background: #0f0f0f;
+      padding: 24px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .script-card:hover { border-color: #69d9ff44; }
+
+    .script-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: #69d9ff;
+      opacity: 0.5;
+    }
+
+    .script-name {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #69d9ff;
+      margin-bottom: 6px;
+    }
+
+    .script-file {
+      font-size: 11px;
+      color: #444;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .script-desc {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border: 1px solid #222;
+      color: #555;
+      letter-spacing: 1px;
+    }
+
+    .tag.green { border-color: #1a3a1a; color: #4a8a4a; }
+    .tag.blue  { border-color: #1a2a3a; color: #4a6a8a; }
+    .tag.gold  { border-color: #3a2a0a; color: #8a6a2a; }
+
+    .download-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid #69d9ff44;
+      color: #69d9ff;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .download-btn:hover {
+      background: #69d9ff11;
+      border-color: #69d9ff;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #333;
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { color: #69d9ff; }
+
+    .footer-divider {
+      margin: 16px auto;
+      width: 60px;
+      height: 1px;
+      background: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>ATHEDIA</h1>
+      <p class="sub">Sovereign Archive Mirror Scripts</p>
+      <div class="divider"></div>
+      <p class="desc">
+        🖥️ Windows batch scripts that mirror Archive.org items to your local machine.
+        No installers. No dependencies. Double-click and run.
+        CC0 Public Domain. All Love Reserved. 💓
+      </p>
+    </header>
+
+    <div class="scripts">
+
+      <div class="script-card">
+        <div class="script-name">ATHEDEN MIRROR</div>
+        <div class="script-file">Atheden-Download.bat</div>
+        <div class="script-desc">
+          Mirrors the Atheden music archive — sacred songs by Ivory and Wendell.
+          Downloads MP3, PNG, TXT, and BAT files. Lyrics (TXT) are always refreshed
+          on every run. Album art matching an MP3 basename and spectrograms are
+          automatically excluded. Resume-safe for audio and images.
+        </div>
+        <div class="tags">
+          <span class="tag green">RESUME-SAFE</span>
+          <span class="tag gold">LYRICS ALWAYS FRESH</span>
+          <span class="tag blue">MP3 · PNG · TXT · BAT</span>
+        </div>
+        <a class="download-btn" href="https://archive.org/download/atheden/Atheden-Download.bat">⬇ DOWNLOAD</a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-name">ATHEDIA MIRROR</div>
+        <div class="script-file">Athedia-Download.bat</div>
+        <div class="script-desc">
+          Mirrors the Athedia infrastructure archive — the complete technical
+          framework, source files, and deployment configurations. Downloads ZIP
+          and BAT files. Resume-safe, preserving all historical versions locally
+          as natural version control.
+        </div>
+        <div class="tags">
+          <span class="tag green">RESUME-SAFE</span>
+          <span class="tag blue">ZIP · BAT</span>
+          <span class="tag gold">VERSION HISTORY PRESERVED</span>
+        </div>
+        <a class="download-btn" href="https://archive.org/download/athedia/Athedia-Download.bat">⬇ DOWNLOAD</a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-name">WIKKKAN BOOKS MIRROR</div>
+        <div class="script-file">Books-Download.bat</div>
+        <div class="script-desc">
+          Mirrors the WIKKKAN books archive — philosophy, spirituality, psychology,
+          politics, and personal transformation by Wendell Charles NeSmith.
+          Wipes and redownloads all files on every run so updated books always
+          replace older local copies.
+        </div>
+        <div class="tags">
+          <span class="tag gold">ALWAYS FRESH</span>
+          <span class="tag blue">TXT · BAT</span>
+        </div>
+        <a class="download-btn" href="https://archive.org/download/wikkkan/Books-Download.bat">⬇ DOWNLOAD</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="https://kkk.education" target="_blank">KKK.EDUCATION</a>
+      &nbsp;·&nbsp;
+      <a href="https://archive.org/details/athedia" target="_blank">ARCHIVE.ORG/ATHEDIA</a>
+      <div class="footer-divider"></div>
+      CC0 PUBLICKÁ DOMÁNIA · ALL LOVE RESERVED<br>
+      WENDELL CHARLES NESMITH · THE WENDING ROAD
+    </footer>
+
+  </div>
+</body>
+</html>
