@@ -3,6 +3,7 @@ Athedia: 🖥️ Sovereign archive mirror scripts for Atheden. Download music, b
 
 https://bardpresident.github.io/Athedia/
 https://bardpresident.github.io/Heaven/
+https://bardpresident.github.io/Files/
 https://kkk.education
 https://atheden.kids
 https://republicka.life
