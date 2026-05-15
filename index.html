@@ -86,12 +86,22 @@
       opacity: 0.5;
     }
 
+    .script-card.gold-card::before {
+      background: #d4a84b;
+    }
+
+    .script-card.gold-card:hover { border-color: #d4a84b44; }
+
     .script-name {
       font-family: 'Cinzel', serif;
       font-size: 13px;
       letter-spacing: 2px;
       color: #69d9ff;
       margin-bottom: 6px;
+    }
+
+    .script-card.gold-card .script-name {
+      color: #d4a84b;
     }
 
     .script-file {
@@ -126,6 +136,7 @@
     .tag.green { border-color: #1a3a1a; color: #4a8a4a; }
     .tag.blue  { border-color: #1a2a3a; color: #4a6a8a; }
     .tag.gold  { border-color: #3a2a0a; color: #8a6a2a; }
+    .tag.warm  { border-color: #3a1a0a; color: #9a5a2a; }
 
     .download-btn {
       display: inline-block;
@@ -142,6 +153,16 @@
     .download-btn:hover {
       background: #69d9ff11;
       border-color: #69d9ff;
+    }
+
+    .download-btn.gold-btn {
+      border-color: #d4a84b44;
+      color: #d4a84b;
+    }
+
+    .download-btn.gold-btn:hover {
+      background: #d4a84b11;
+      border-color: #d4a84b;
     }
 
     .mirrors { display: flex; flex-direction: column; gap: 10px; }
@@ -222,6 +243,25 @@
     <div class="section">
       <h2>Mirror Scripts</h2>
       <div class="scripts">
+
+        <div class="script-card gold-card">
+          <div class="script-name">SOUL CALCULATOR</div>
+          <div class="script-file">SoulCalculator-Download.bat</div>
+          <div class="script-desc">
+            An installer and setup wizard that downloads the Soul Calculator
+            source library — entirely AI-generated philosophy — and walks you
+            step by step through building your own personal Soul Calculator
+            inside NotebookLM. Asks for your name. Transfers creative ownership
+            to you. Generates your personal initiation prompt and a README guide
+            for the full creative loop. No programming knowledge required.
+          </div>
+          <div class="tags">
+            <span class="tag warm">SETUP WIZARD</span>
+            <span class="tag gold">AI-GENERATED SOURCES</span>
+            <span class="tag blue">TXT · BAT</span>
+          </div>
+          <a class="download-btn gold-btn" href="https://archive.org/download/soul-calculator/SoulCalculator-Download.bat" target="_blank" rel="noopener noreferrer">⬇ DOWNLOAD</a>
+        </div>
 
         <div class="script-card">
           <div class="script-name">ATHEDEN MIRROR</div>
