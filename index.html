@@ -9,12 +9,163 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* ══ DARK MODE (default) ═══════════════════════════════════════════════ */
+    :root {
+      --bg:              #0a0a0a;
+      --color:           #c8c8c8;
+      --accent:          #69d9ff;
+      --accent-glow:     rgba(105,217,255,0.4);
+      --accent-border:   rgba(105,217,255,0.27);
+      --accent-hover-bg: rgba(105,217,255,0.07);
+      --gold:            #d4a84b;
+      --gold-border:     rgba(212,168,75,0.27);
+      --gold-hover-bg:   rgba(212,168,75,0.07);
+      --card-bg:         #0f0f0f;
+      --card-border:     #1e1e1e;
+      --card-hover:      rgba(105,217,255,0.27);
+      --gold-card-hover: rgba(212,168,75,0.27);
+      --section-border:  #2a2a2a;
+      --dim:             #888;
+      --dimmer:          #555;
+      --dimmest:         #444;
+      --tag-border:      #222;
+      --tag-color:       #555;
+      --mirror-border:   #1a1a1a;
+      --footer-color:    #888;
+      --footer-a:        #aaa;
+      --footer-divider:  #333;
+      --h2-color:        #888;
+      --sub-color:       #555;
+      --desc-color:      #888;
+    }
+
+    /* ══ LIGHT MODE ════════════════════════════════════════════════════════ */
+    body.light {
+      --bg:              #f0f4f8;
+      --color:           #1a2530;
+      --accent:          #0077aa;
+      --accent-glow:     rgba(0,119,170,0.2);
+      --accent-border:   rgba(0,119,170,0.35);
+      --accent-hover-bg: rgba(0,119,170,0.07);
+      --gold:            #7a5000;
+      --gold-border:     rgba(122,80,0,0.35);
+      --gold-hover-bg:   rgba(122,80,0,0.07);
+      --card-bg:         #ffffff;
+      --card-border:     #d8e0e8;
+      --card-hover:      rgba(0,119,170,0.25);
+      --gold-card-hover: rgba(122,80,0,0.25);
+      --section-border:  #c8d0d8;
+      --dim:             #445566;
+      --dimmer:          #667788;
+      --dimmest:         #889aaa;
+      --tag-border:      #c8d4dc;
+      --tag-color:       #667788;
+      --mirror-border:   #d0d8e0;
+      --footer-color:    #556677;
+      --footer-a:        #334455;
+      --footer-divider:  #c0ccd8;
+      --h2-color:        #556677;
+      --sub-color:       #778899;
+      --desc-color:      #556677;
+    }
+
+    /* ══ PARTY MODE ════════════════════════════════════════════════════════ */
+    body.party {
+      --bg:              #06000f;
+      --color:           #ffffff;
+      --accent:          #cc88ff;
+      --accent-glow:     rgba(204,136,255,0.5);
+      --accent-border:   rgba(204,136,255,0.35);
+      --accent-hover-bg: rgba(204,136,255,0.08);
+      --gold:            #ff2d78;
+      --gold-border:     rgba(255,45,120,0.35);
+      --gold-hover-bg:   rgba(255,45,120,0.08);
+      --card-bg:         #0d0020;
+      --card-border:     #1a0035;
+      --card-hover:      rgba(204,136,255,0.3);
+      --gold-card-hover: rgba(255,45,120,0.3);
+      --section-border:  #2a0050;
+      --dim:             #aa88cc;
+      --dimmer:          #886699;
+      --dimmest:         #664477;
+      --tag-border:      #2a0050;
+      --tag-color:       #886699;
+      --mirror-border:   #1a0035;
+      --footer-color:    #aa88cc;
+      --footer-a:        #cc88ff;
+      --footer-divider:  #2a0050;
+      --h2-color:        #aa88cc;
+      --sub-color:       #886699;
+      --desc-color:      #aa88cc;
+    }
+
+    body.party {
+      animation: party-bg 8s linear infinite;
+    }
+    @keyframes party-bg {
+      0%   { background-color: #06000f; }
+      20%  { background-color: #0a0006; }
+      40%  { background-color: #00060f; }
+      60%  { background-color: #06000f; }
+      80%  { background-color: #080004; }
+      100% { background-color: #06000f; }
+    }
+
+    body.party header h1 {
+      animation: party-text 2s linear infinite;
+    }
+    @keyframes party-text {
+      0%   { color: #cc88ff; text-shadow: 0 0 30px rgba(204,136,255,0.7); }
+      25%  { color: #ff2d78; text-shadow: 0 0 30px rgba(255,45,120,0.7); }
+      50%  { color: #00ffff; text-shadow: 0 0 30px rgba(0,255,255,0.7); }
+      75%  { color: #aaff00; text-shadow: 0 0 30px rgba(170,255,0,0.7); }
+      100% { color: #cc88ff; text-shadow: 0 0 30px rgba(204,136,255,0.7); }
+    }
+
+    body.party .script-card::before {
+      animation: party-bar 2s linear infinite;
+    }
+    @keyframes party-bar {
+      0%   { background: #cc88ff; }
+      25%  { background: #ff2d78; }
+      50%  { background: #00ffff; }
+      75%  { background: #aaff00; }
+      100% { background: #cc88ff; }
+    }
+
+    /* ══ THEME BUTTON (floating) ═══════════════════════════════════════════ */
+    .theme-btn {
+      position: fixed;
+      bottom: 22px;
+      right: 18px;
+      z-index: 999;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 0;
+    }
+    .theme-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 4px 18px var(--accent-glow);
+    }
+
+    /* ══ BASE STYLES ═══════════════════════════════════════════════════════ */
     body {
-      background: #0a0a0a;
-      color: #c8c8c8;
+      background: var(--bg);
+      color: var(--color);
       font-family: 'Share Tech Mono', monospace;
       min-height: 100vh;
       padding: 40px 20px 60px;
+      transition: background 0.4s, color 0.4s;
     }
 
     .page { max-width: 720px; margin: 0 auto; }
@@ -25,42 +176,47 @@
       font-family: 'Cinzel', serif;
       font-size: 36px;
       letter-spacing: 8px;
-      color: #69d9ff;
-      text-shadow: 0 0 30px rgba(105,217,255,0.4);
+      color: var(--accent);
+      text-shadow: 0 0 30px var(--accent-glow);
       margin-bottom: 8px;
+      transition: color 0.4s;
     }
 
     header .sub {
       font-size: 12px;
-      color: #555;
+      color: var(--sub-color);
       letter-spacing: 3px;
       text-transform: uppercase;
+      transition: color 0.4s;
     }
 
     header .divider {
       margin: 20px auto;
       width: 120px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #69d9ff, transparent);
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transition: background 0.4s;
     }
 
     header .desc {
       font-size: 13px;
-      color: #888;
+      color: var(--desc-color);
       line-height: 1.8;
       max-width: 520px;
       margin: 0 auto;
+      transition: color 0.4s;
     }
 
     h2 {
       font-family: 'Cinzel', serif;
       font-size: 11px;
       letter-spacing: 4px;
-      color: #888;
+      color: var(--h2-color);
       text-transform: uppercase;
       margin-bottom: 16px;
       padding-bottom: 8px;
-      border-bottom: 1px solid #2a2a2a;
+      border-bottom: 1px solid var(--section-border);
+      transition: color 0.4s, border-color 0.4s;
     }
 
     .section { margin-bottom: 48px; }
@@ -68,54 +224,58 @@
     .scripts { display: flex; flex-direction: column; gap: 16px; }
 
     .script-card {
-      border: 1px solid #1e1e1e;
-      background: #0f0f0f;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
       padding: 24px;
       position: relative;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.4s;
     }
 
-    .script-card:hover { border-color: #69d9ff44; }
+    .script-card:hover { border-color: var(--card-hover); }
 
     .script-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 3px; height: 100%;
-      background: #69d9ff;
+      background: var(--accent);
       opacity: 0.5;
+      transition: background 0.4s;
     }
 
     .script-card.gold-card::before {
-      background: #d4a84b;
+      background: var(--gold);
     }
 
-    .script-card.gold-card:hover { border-color: #d4a84b44; }
+    .script-card.gold-card:hover { border-color: var(--gold-card-hover); }
 
     .script-name {
       font-family: 'Cinzel', serif;
       font-size: 13px;
       letter-spacing: 2px;
-      color: #69d9ff;
+      color: var(--accent);
       margin-bottom: 6px;
+      transition: color 0.4s;
     }
 
     .script-card.gold-card .script-name {
-      color: #d4a84b;
+      color: var(--gold);
     }
 
     .script-file {
       font-size: 11px;
-      color: #444;
+      color: var(--dimmest);
       margin-bottom: 12px;
       letter-spacing: 1px;
+      transition: color 0.4s;
     }
 
     .script-desc {
       font-size: 12px;
-      color: #777;
+      color: var(--dim);
       line-height: 1.8;
       margin-bottom: 16px;
+      transition: color 0.4s;
     }
 
     .tags {
@@ -128,9 +288,10 @@
     .tag {
       font-size: 10px;
       padding: 2px 8px;
-      border: 1px solid #222;
-      color: #555;
+      border: 1px solid var(--tag-border);
+      color: var(--tag-color);
       letter-spacing: 1px;
+      transition: border-color 0.4s, color 0.4s;
     }
 
     .tag.green { border-color: #1a3a1a; color: #4a8a4a; }
@@ -138,11 +299,21 @@
     .tag.gold  { border-color: #3a2a0a; color: #8a6a2a; }
     .tag.warm  { border-color: #3a1a0a; color: #9a5a2a; }
 
+    body.light .tag.green { border-color: #c0d8c0; color: #2a6a2a; }
+    body.light .tag.blue  { border-color: #b8ccdc; color: #2a4a7a; }
+    body.light .tag.gold  { border-color: #dcd0b0; color: #6a4a00; }
+    body.light .tag.warm  { border-color: #dcc8b0; color: #7a3a00; }
+
+    body.party .tag.green { border-color: #1a3a30; color: #44cc99; }
+    body.party .tag.blue  { border-color: #1a1a40; color: #6688ff; }
+    body.party .tag.gold  { border-color: #3a0a20; color: #ff6699; }
+    body.party .tag.warm  { border-color: #3a0a30; color: #cc44ff; }
+
     .download-btn {
       display: inline-block;
       padding: 8px 20px;
-      border: 1px solid #69d9ff44;
-      color: #69d9ff;
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
       font-family: 'Share Tech Mono', monospace;
       font-size: 11px;
       letter-spacing: 2px;
@@ -151,18 +322,18 @@
     }
 
     .download-btn:hover {
-      background: #69d9ff11;
-      border-color: #69d9ff;
+      background: var(--accent-hover-bg);
+      border-color: var(--accent);
     }
 
     .download-btn.gold-btn {
-      border-color: #d4a84b44;
-      color: #d4a84b;
+      border-color: var(--gold-border);
+      color: var(--gold);
     }
 
     .download-btn.gold-btn:hover {
-      background: #d4a84b11;
-      border-color: #d4a84b;
+      background: var(--gold-hover-bg);
+      border-color: var(--gold);
     }
 
     .mirrors { display: flex; flex-direction: column; gap: 10px; }
@@ -172,13 +343,13 @@
       align-items: center;
       gap: 14px;
       padding: 14px 18px;
-      border: 1px solid #1a1a1a;
-      background: #0f0f0f;
+      border: 1px solid var(--mirror-border);
+      background: var(--card-bg);
       text-decoration: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.4s;
     }
 
-    .mirror-link:hover { border-color: #333; }
+    .mirror-link:hover { border-color: var(--section-border); }
 
     .mirror-icon {
       font-size: 18px;
@@ -193,35 +364,39 @@
       font-family: 'Cinzel', serif;
       font-size: 11px;
       letter-spacing: 2px;
-      color: #888;
+      color: var(--dim);
       margin-bottom: 2px;
+      transition: color 0.4s;
     }
 
     .mirror-url {
       font-size: 10px;
-      color: #69d9ff;
+      color: var(--accent);
       letter-spacing: 1px;
       opacity: 0.7;
+      transition: color 0.4s;
     }
 
-    .mirror-arrow { font-size: 11px; color: #555; }
+    .mirror-arrow { font-size: 11px; color: var(--dimmer); transition: color 0.4s; }
 
     footer {
       text-align: center;
       font-size: 11px;
-      color: #888;
+      color: var(--footer-color);
       letter-spacing: 2px;
       line-height: 2;
+      transition: color 0.4s;
     }
 
-    footer a { color: #aaa; text-decoration: none; }
-    footer a:hover { color: #69d9ff; }
+    footer a { color: var(--footer-a); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
 
     .footer-divider {
       margin: 16px auto;
       width: 60px;
       height: 1px;
-      background: #333;
+      background: var(--footer-divider);
+      transition: background 0.4s;
     }
   </style>
 </head>
@@ -418,5 +593,39 @@
     </footer>
 
   </div>
+
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Switch theme"><span id="themeIcon">🌙</span></button>
+
+  <script>
+    function toggleTheme() {
+      var b = document.body;
+      var next = b.classList.contains('light') ? 'party'
+               : b.classList.contains('party') ? 'dark'
+               : 'light';
+      b.classList.remove('light', 'party');
+      if (next === 'light') {
+        b.classList.add('light');
+        document.getElementById('themeIcon').textContent = '☀️';
+      } else if (next === 'party') {
+        b.classList.add('party');
+        document.getElementById('themeIcon').textContent = '🎉';
+      } else {
+        document.getElementById('themeIcon').textContent = '🌙';
+      }
+      try { localStorage.setItem('athedia-theme', next); } catch(e) {}
+    }
+
+    try {
+      var saved = localStorage.getItem('athedia-theme');
+      if (saved === 'light') {
+        document.body.classList.add('light');
+        document.getElementById('themeIcon').textContent = '☀️';
+      } else if (saved === 'party') {
+        document.body.classList.add('party');
+        document.getElementById('themeIcon').textContent = '🎉';
+      }
+    } catch(e) {}
+  </script>
+
 </body>
 </html>
